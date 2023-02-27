@@ -43,8 +43,14 @@ export default function Seach (){
                 const response = await api.get(`${cep}/json`)
                 Setrequest(response.data)
                 Input.value =''
+                console.log(request)
+                console.log(Object.keys(request).length)
+
+               
+           
+                
             }catch{ 
-                if(request === undefined){
+                if((request === undefined )|| (Object.keys(request).length <= 1) ){
     
                     Swal.fire({
                         icon: 'error',
@@ -52,16 +58,22 @@ export default function Seach (){
                         text: 'Houver um erro ao buscar o cep tente novamente',
                     })    
                 }
-                
-
+                  
                 Swal.fire({
                     icon: 'error',
                     title: 'ERROR 400',
                     text: 'Houver um erro ao buscar o cep tente novamente',
                 })
                 
+              
+                
                 Input.value =''
+               
+               
             }
+         
+            
+
         }
 
     return(
@@ -81,7 +93,7 @@ export default function Seach (){
                 
 
             </SeachContainer>
-             {Object.keys(request).length > 0  && ( 
+             {Object.keys(request).length > 1 && ( 
              <ReturnSeach cep={request.cep} bairro={request.bairro} logradouro={request.logradouro} uf={request.uf} localidade={request.localidade}/>)
              }
            
