@@ -13,16 +13,15 @@ export const Container = styled.div `
     display: flex;
     justify-content:center;
     height:100vh;
-    background: red;
+    
 `
 export const DisplayComponents = styled.div `
     width:100vw; 
     display:flex; 
     justify-content:space-around;   
     flex-direction:column;  
-    height:100vh;
+    height: 99vh;
     margin:auto;
-    background-color:white;
 `
 export const SeachContainer = styled.div `
     width:100vw; 
@@ -35,11 +34,12 @@ export const SeachContainer = styled.div `
     background-color:white;
 `
 export const ReturnContainer = styled.div `
-    width:100vw; 
+    width:100%; 
     background-color:whitesmoke;
     margin: auto;
     padding:20px; 
     height: 50vh;
+   
 `
 export const SeachInput = styled.input `
     width: 500px;
