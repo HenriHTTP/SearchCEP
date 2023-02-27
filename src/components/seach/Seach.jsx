@@ -22,32 +22,26 @@ export default function Seach (){
     const[request,Setrequest] = useState({})
         
      function handleCepMask (args) {
-            let mask = args.target.value
+            let mask = args.target.value // get value input cep
             let positionMask = mask.split('')
-            let masklength = positionMask.length
+            let masklength = positionMask.length //transform in array
         
-            if(masklength === 5){ 
+            if(masklength === 5){ //positon array  5  condicion 
                args.target.value += '-'
             } 
-            let CEP =  args.target.value.replace('-','')
+            let CEP =  args.target.value.replace('-','') //add cep not ' -' 
             Setcep(CEP)
           
         }
         async function handleSearch (){ 
             let Input = document.getElementById('Input_cep')
             if( cep === ""){ 
-                console.log('cep is  null')
                 return
             }
             try { 
                 const response = await api.get(`${cep}/json`)
                 Setrequest(response.data)
                 Input.value =''
-                console.log(request)
-                console.log(Object.keys(request).length)
-
-               
-           
                 
             }catch{ 
                 if((request === undefined )|| (Object.keys(request).length <= 1) ){
@@ -64,11 +58,8 @@ export default function Seach (){
                     title: 'ERROR 400',
                     text: 'Houver um erro ao buscar o cep tente novamente',
                 })
-                
-              
-                
-                Input.value =''
-               
+           
+                Input.value =''  
                
             }
          
