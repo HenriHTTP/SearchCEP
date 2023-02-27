@@ -3,6 +3,7 @@ import {
     ReturnContainer,
     ReturnInfo,
     Information,
+    ReturnContainerText
 } from '../style/GlobalStyled'
 import {AiFillHome,AiFillFlag,AiTwotoneBell,AiTwotoneCar,AiTwotoneShop,AiFillEnvironment} from 'react-icons/ai'
 
@@ -10,6 +11,7 @@ export default function ReturnSeach ( {cep,logradouro,bairro,localidade,uf,}){
     return (
         <> 
             <ReturnContainer>
+                <ReturnContainerText>
                 <Information> 
                    <AiFillEnvironment/>Informações
                 </Information>
@@ -19,7 +21,7 @@ export default function ReturnSeach ( {cep,logradouro,bairro,localidade,uf,}){
                 <ReturnInfo><AiTwotoneShop/>Bairro: {bairro}</ReturnInfo>
                 <ReturnInfo><AiTwotoneBell/>localidade: {localidade}</ReturnInfo>
                 <ReturnInfo><AiFillFlag/>UF: {uf}</ReturnInfo>
-                   
+                </ReturnContainerText> 
             </ReturnContainer>
         </>
     )

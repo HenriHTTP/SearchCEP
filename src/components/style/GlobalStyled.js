@@ -1,9 +1,5 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const puch = keyframes`
-    to { right: 100px; }
-    from { right:0px; }
-`
 
 
 export const Title = styled.h1 `
@@ -17,36 +13,33 @@ export const Container = styled.div `
     display: flex;
     justify-content:center;
     height:100vh;
-    background: whitesmoke;
+    background: red;
 `
 export const DisplayComponents = styled.div `
-    width:900px; 
+    width:100vw; 
     display:flex; 
     justify-content:space-around;   
     flex-direction:column;  
-    height:900px;
+    height:100vh;
     margin:auto;
+    background-color:white;
 `
 export const SeachContainer = styled.div `
-    width:700px; 
+    width:100vw; 
     margin: auto;
     padding:20px; 
-    height:350px;
+    height: 50vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    border-radius:10px;
     background-color:white;
 `
 export const ReturnContainer = styled.div `
-    width:700px; 
-    background-color:white;
+    width:100vw; 
+    background-color:whitesmoke;
     margin: auto;
     padding:20px; 
-    border-radius:10px;
-    animation-name:${puch}; 
-    animation-duration:0.5s;
-    position: relative;
+    height: 50vh;
 `
 export const SeachInput = styled.input `
     width: 500px;
@@ -85,13 +78,18 @@ export const ReturnInfo = styled.p `
     font-size:1.2em;
     text-align:left;
     width:600px;
-    margin:auto;
     padding:20px;
 `
 export const Information = styled.h1 ` 
     color:gray;
     font-size:2em;
-    text-align:center;
+    text-align:left;
     padding:20px;   
 
+`
+export const ReturnContainerText = styled.div `
+    width:900px; 
+    margin: auto;
+    padding:20px; 
+    margin:auto;
 `
